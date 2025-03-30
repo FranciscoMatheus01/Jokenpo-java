@@ -1,0 +1,25 @@
+
+  <!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+  <h:head>
+      <title>Cadastro de Jogada</title>
+  </h:head>
+  <h:body>
+      <h:form>
+          <p:messages />
+          <p:panel header="Cadastro de Jogada">
+              <h:panelGrid columns="2">
+                  <p:outputLabel value="Jogador 1:" for="jogador1" />
+                  <p:inputText id="jogador1" value="#{jogadaBean.jogada.jogador1}" required="true" />
+                  <p:outputLabel value="Jogador 2:" for="jogador2" />
+                  <p:inputText id="jogador2" value="#{jogadaBean.jogada.jogador2}" required="true" />
+              </h:panelGrid>
+              <p:commandButton value="Salvar" action="#{jogadaBean.salvar}" update="@form" />
+              <p:button value="Listar Jogadas" outcome="listagem.xhtml" />
+
+          </p:panel>
+      </h:form>
+  </h:body>
+  </html>

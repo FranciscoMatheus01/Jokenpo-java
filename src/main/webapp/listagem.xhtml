@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:head>
+      <title>Listagem de Jogadas</title>
+  </h:head>
+  <h:body>
+      <h:form>
+          <p:messages />
+          <p:dataTable value="#{jogadaBean.jogadas}" var="jogada">
+              <p:column headerText="ID">
+                  <h:outputText value="#{jogada.id}" />
+              </p:column>
+              <p:column headerText="Jogador 1">
+                  <p:inputText value="#{jogada.jogador1}" />
+              </p:column>
+              <p:column headerText="Jogador 2">
+                  <p:inputText value="#{jogada.jogador2}" />
+              </p:column>
+              <p:column headerText="Jogada 1">
+                  <h:outputText value="#{jogada.jogada1}" />
+              </p:column>
+              <p:column headerText="Jogada 2">
+                  <h:outputText value="#{jogada.jogada2}" />
+              </p:column>
+              <p:column headerText="Resultado">
+                  <h:outputText value="#{jogada.resultado}" />
+              </p:column>
+              <p:column headerText="Data">
+                  <h:outputText value="#{jogada.data}">
+                      <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
+                  </h:outputText>
+              </p:column>
+              <p:column>
+                  <p:commandButton value="Editar" action="#{jogadaBean.editar(jogada)}" update="@form" />
+                  <p:commandButton value="Excluir" action="#{jogadaBean.excluir(jogada.id)}" update="@form" />
+              </p:column>
+          </p:dataTable>
+          <p:commandLink value="Nova Jogada" action="index.xhtml" />
+      </h:form>
+  </h:body>
+  </html>
