@@ -30,10 +30,10 @@ public class JogadaBean {
                 new FacesMessage("Jogada salva!"));
         
         FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage("Jogador 1 jogou: " + jogada.getJogada1() ));
+                new FacesMessage(jogada.getJogador1() + " jogou: " + jogada.getJogada1() ));
         
         FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage("Jogador 2 jogou: " + jogada.getJogada2() ));
+                new FacesMessage(jogada.getJogador2() + " jogou: " + jogada.getJogada2() ));
         
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage("Resultado do Jogo: " + jogada.getResultado()));
